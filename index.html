@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Based Smart Parking Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><span>🅿️</span> AI Smart Parking</div>
+    <div class="status">● AI SYSTEM ONLINE</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="tag">SMART CITY • MACHINE LEARNING</p>
+        <h1>AI-Based Smart<br>Parking Prediction</h1>
+        <p>Predict parking occupancy, estimate available spaces, and find the recommended parking zone.</p>
+      </div>
+      <div class="hero-icon">🚗<br><small>SMART PARKING</small></div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Prediction Input</h2>
+
+        <label>Parking Zone</label>
+        <select id="zone">
+          <option>Zone A</option>
+          <option>Zone B</option>
+          <option>Zone C</option>
+        </select>
+
+        <label>Day</label>
+        <select id="day">
+          <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+          <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+        </select>
+
+        <label>Arrival Time <b id="hourText">18:00</b></label>
+        <input id="hour" type="range" min="0" max="23" value="18">
+
+        <label>Current Occupancy <b id="occText">50%</b></label>
+        <input id="current" type="range" min="0" max="100" value="50">
+
+        <button id="predict">🤖 Predict Parking</button>
+      </div>
+
+      <div class="card result">
+        <h2>AI Prediction Result</h2>
+        <div class="big-number" id="predicted">58%</div>
+        <div>Predicted Occupancy</div>
+
+        <div class="stats">
+          <div><strong id="free">42%</strong><span>Expected Free</span></div>
+          <div><strong id="zoneResult">Zone B</strong><span>Recommended Zone</span></div>
+        </div>
+
+        <div class="meter"><div id="meterFill"></div></div>
+        <p id="message">Run a prediction to calculate future parking availability.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Parking Slot Map</h2>
+      <div class="legend"><span>🟢 Free</span><span>🔴 Occupied</span></div>
+      <div id="slots" class="slots"></div>
+    </section>
+
+    <section class="card about">
+      <h2>How the AI Prediction Works</h2>
+      <p>The demo model uses zone, day, arrival hour, and current occupancy to estimate future occupancy. The same interface can be connected to a Python/FastAPI machine-learning model trained with real parking sensor data.</p>
+    </section>
+  </main>
+
+  <footer>AI-Based Smart Parking Prediction • College Project Demo</footer>
+  <script src="app.js"></script>
+</body>
+</html>
